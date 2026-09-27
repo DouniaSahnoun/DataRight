@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Q01",
+    "category": "Direct",
+    "question": "Can Asteria use the Atlas Business Corpus in a commercial product?",
+    "expected": "Not under D01 alone. D01 limits use to internal non-production research and evaluation and prohibits commercial use.",
+    "source": "D01",
+    "clause": "2.1 and 3.1(a)",
+    "page": 1,
+    "status": "supported"
+  },
+  {
+    "id": "Q02",
+    "category": "Direct",
+    "question": "May HelixLM be deployed to customers through Asteria's hosted service?",
+    "expected": "Yes, if customers access it through Asteria's hosted service and do not receive the model weights.",
+    "source": "D02",
+    "clause": "2.1 and 3.1",
+    "page": 1,
+    "status": "supported_with_condition"
+  },
+  {
+    "id": "Q03",
+    "category": "Direct",
+    "question": "When is the VectorGrid usage report due?",
+    "expected": "Within 15 calendar days after each calendar quarter.",
+    "source": "D03",
+    "clause": "4.1",
+    "page": 2,
+    "status": "supported"
+  },
+  {
+    "id": "Q04",
+    "category": "Direct",
+    "question": "How does the Horizon Bank subscription renew?",
+    "expected": "It renews for successive 12-month periods unless either party gives at least 60 days' written notice.",
+    "source": "D04",
+    "clause": "5.2",
+    "page": 2,
+    "status": "supported"
+  },
+  {
+    "id": "Q05",
+    "category": "Direct",
+    "question": "Which product receives a commercial-use permission under the Atlas amendment?",
+    "expected": "ClauseLens Enterprise only. The amendment does not authorise Atlas use in DealRoom Search or other products.",
+    "source": "D05",
+    "clause": "2.1 and 2.2",
+    "page": 1,
+    "status": "supported_with_condition"
+  },
+  {
+    "id": "Q06",
+    "category": "Direct",
+    "question": "When must Asteria notify Horizon Bank of a security incident?",
+    "expected": "Within 24 hours after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+    "source": "D06",
+    "clause": "3.1",
+    "page": 1,
+    "status": "supported_with_condition"
+  },
+  {
+    "id": "Q07",
+    "category": "Direct",
+    "question": "Which legal entity is licensed to use OCRVision API?",
+    "expected": "Asteria AI UK Ltd. The agreement does not grant rights to affiliates unless VisionCore consents in writing.",
+    "source": "D07",
+    "clause": "1.2 and 2.1",
+    "page": 1,
+    "status": "supported"
+  },
+  {
+    "id": "Q08",
+    "category": "Direct",
+    "question": "Is the ReportForge order form currently effective?",
+    "expected": "No. It is an unsigned draft and states that it has no effect until signed by both parties.",
+    "source": "D08",
+    "clause": "1.1 and 6.1",
+    "page": 1,
+    "status": "supported"
+  },
+  {
+    "id": "Q09",
+    "category": "Reformulation",
+    "question": "Can Asteria hand HelixLM's model weights to a customer?",
+    "expected": "No. Customers may access functionality through the hosted service, but the weights may not be distributed.",
+    "source": "D02",
+    "clause": "3.1 and 3.2",
+    "page": 1,
+    "status": "supported"
+  },
+  {
+    "id": "Q10",
+    "category": "Reformulation",
+    "question": "May raw Atlas records be exposed to ClauseLens customers after the amendment?",
+    "expected": "No. D05 permits limited use in ClauseLens but prohibits exposing or distributing the underlying data to customers.",
+    "source": "D05",
+    "clause": "2.3",
+    "page": 1,
+    "status": "supported"
+  },
+  {
+    "id": "Q11",
+    "category": "Reformulation",
+    "question": "What recurring evidence must Asteria give VectorGrid?",
+    "expected": "A quarterly usage report showing documents processed and active production workspaces.",
+    "source": "D03",
+    "clause": "4.1",
+    "page": 2,
+    "status": "supported"
+  },
+  {
+    "id": "Q12",
+    "category": "Reformulation",
+    "question": "Does every service outage trigger Horizon Bank's 24-hour incident notice?",
+    "expected": "No. The 24-hour notice applies only after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+    "source": "D06",
+    "clause": "2.1 and 3.1",
+    "page": 1,
+    "status": "supported_with_condition"
+  }
+]

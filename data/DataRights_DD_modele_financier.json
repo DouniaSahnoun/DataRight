@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "source_file": "DataRights_DD_modele_financier.xlsx",
+    "sheet_names": [
+      "Summary",
+      "Product revenue",
+      "Components",
+      "Dependencies",
+      "QA questions"
+    ],
+    "currency": "EUR",
+    "revenue_metric": "ARR",
+    "company": "Asteria AI SAS",
+    "synthetic_demo_data": true
+  },
+  "summary": {
+    "title": "DataRights DD - modele financier",
+    "subtitle": "Asteria AI SAS | Jeu de demonstration fictif | Montants en EUR d'ARR",
+    "indicators": [
+      {
+        "label": "ARR total",
+        "value": 700000,
+        "formula": "=SUM('Product revenue'!D5:D7)"
+      },
+      {
+        "label": "ARR lie a une restriction explicite",
+        "value": 540000,
+        "formula": "=SUMIFS('Product revenue'!D5:D7,'Product revenue'!E5:E7,\"Explicit restriction\")"
+      },
+      {
+        "label": "ARR lie a des documents de droits manquants",
+        "value": 160000,
+        "formula": "=SUMIFS('Product revenue'!D5:D7,'Product revenue'!E5:E7,\"Missing rights document\")"
+      },
+      {
+        "label": "ARR necessitant une verification",
+        "value": 700000,
+        "formula": "=SUMIFS('Product revenue'!D5:D7,'Product revenue'!E5:E7,\"<>Documented commercial right\")"
+      }
+    ],
+    "arr_allocation": [
+      {
+        "category": "Restriction explicite",
+        "arr_eur": 540000,
+        "arr_eur_formula": "=B8",
+        "share_of_total": 0.7714285714285715,
+        "share_of_total_formula": "=B13/$B$7"
+      },
+      {
+        "category": "Document de droits manquant",
+        "arr_eur": 160000,
+        "arr_eur_formula": "=B9",
+        "share_of_total": 0.22857142857142856,
+        "share_of_total_formula": "=B14/$B$7"
+      },
+      {
+        "category": "Droit commercial documente",
+        "arr_eur": 0,
+        "arr_eur_formula": "=B7-B10",
+        "share_of_total": 0,
+        "share_of_total_formula": "=B15/$B$7"
+      },
+      {
+        "category": "Total",
+        "arr_eur": 700000,
+        "arr_eur_formula": "=SUM(B13:B15)",
+        "share_of_total": 1,
+        "share_of_total_formula": "=SUM(C13:C15)"
+      }
+    ],
+    "interpretation": "Interpretation : les montants sont des revenus associes a une verification contractuelle. Ils ne constituent ni une perte estimee, ni une responsabilite, ni une decote de valorisation. Chaque produit est compte une seule fois selon la priorite restriction explicite, document manquant, puis droit documente."
+  },
+  "products": [
+    {
+      "product_id": "P01",
+      "product_name": "ClauseLens Enterprise",
+      "description": "Extraction de clauses et alertes de risque",
+      "arr_eur": 300000,
+      "review_status": "Explicit restriction",
+      "review_status_formula": "=IF(COUNTIFS(Dependencies!$A$5:$A$12,$A5,Dependencies!$E$5:$E$12,\"Explicit restriction\")>0,\"Explicit restriction\",IF(COUNTIFS(Dependencies!$A$5:$A$12,$A5,Dependencies!$E$5:$E$12,\"Missing rights document\")>0,\"Missing rights document\",\"Documented commercial right\"))",
+      "reason": "Atlas Business Corpus est limite a la recherche interne."
+    },
+    {
+      "product_id": "P02",
+      "product_name": "DealRoom Search",
+      "description": "Recherche semantique en data room",
+      "arr_eur": 240000,
+      "review_status": "Explicit restriction",
+      "review_status_formula": "=IF(COUNTIFS(Dependencies!$A$5:$A$12,$A6,Dependencies!$E$5:$E$12,\"Explicit restriction\")>0,\"Explicit restriction\",IF(COUNTIFS(Dependencies!$A$5:$A$12,$A6,Dependencies!$E$5:$E$12,\"Missing rights document\")>0,\"Missing rights document\",\"Documented commercial right\"))",
+      "reason": "Atlas Business Corpus est limite a la recherche interne."
+    },
+    {
+      "product_id": "P03",
+      "product_name": "BoardPack Studio",
+      "description": "Generation de syntheses de transaction",
+      "arr_eur": 160000,
+      "review_status": "Missing rights document",
+      "review_status_formula": "=IF(COUNTIFS(Dependencies!$A$5:$A$12,$A7,Dependencies!$E$5:$E$12,\"Explicit restriction\")>0,\"Explicit restriction\",IF(COUNTIFS(Dependencies!$A$5:$A$12,$A7,Dependencies!$E$5:$E$12,\"Missing rights document\")>0,\"Missing rights document\",\"Documented commercial right\"))",
+      "reason": "Documents manquants pour ReportForge et OCRVision API."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "C01",
+      "component_name": "HelixLM 7B",
+      "type": "Foundation model",
+      "document_id": "D02",
+      "status": "Documented commercial right",
+      "summary": "Usage commercial heberge permis; redistribution des poids interdite."
+    },
+    {
+      "component_id": "C02",
+      "component_name": "Atlas Business Corpus",
+      "type": "Dataset",
+      "document_id": "D01",
+      "status": "Explicit restriction",
+      "summary": "Recherche interne non productive uniquement; usage commercial interdit."
+    },
+    {
+      "component_id": "C03",
+      "component_name": "VectorGrid Enterprise",
+      "type": "Search API",
+      "document_id": "D03",
+      "status": "Documented commercial right",
+      "summary": "Usage SaaS commercial permis avec plafond et reporting trimestriel."
+    },
+    {
+      "component_id": "C04",
+      "component_name": "ReportForge Community",
+      "type": "Reporting library",
+      "document_id": null,
+      "status": "Missing rights document",
+      "summary": "Aucun document de licence fourni."
+    },
+    {
+      "component_id": "C05",
+      "component_name": "OCRVision API",
+      "type": "OCR API",
+      "document_id": null,
+      "status": "Missing rights document",
+      "summary": "Aucun accord commercial execute fourni."
+    }
+  ],
+  "dependencies": [
+    {
+      "product_id": "P01",
+      "component_id": "C01",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "HelixLM 7B",
+      "component_status": "Documented commercial right"
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C02",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "Atlas Business Corpus",
+      "component_status": "Explicit restriction"
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C03",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "VectorGrid Enterprise",
+      "component_status": "Documented commercial right"
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C02",
+      "product_name": "DealRoom Search",
+      "component_name": "Atlas Business Corpus",
+      "component_status": "Explicit restriction"
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C03",
+      "product_name": "DealRoom Search",
+      "component_name": "VectorGrid Enterprise",
+      "component_status": "Documented commercial right"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C01",
+      "product_name": "BoardPack Studio",
+      "component_name": "HelixLM 7B",
+      "component_status": "Documented commercial right"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C04",
+      "product_name": "BoardPack Studio",
+      "component_name": "ReportForge Community",
+      "component_status": "Missing rights document"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C05",
+      "product_name": "BoardPack Studio",
+      "component_name": "OCRVision API",
+      "component_status": "Missing rights document"
+    }
+  ],
+  "qa_questions": [
+    {
+      "question_id": "Q01",
+      "question": "Can Asteria use the Atlas Business Corpus in a commercial product?",
+      "expected_answer": "No. Internal non-production research and evaluation only; commercial use is prohibited.",
+      "document_id": "D01",
+      "clause": "2.1 and 3.1(a)",
+      "page": 1,
+      "status": "Supported",
+      "expected_citation": "Licensee may use the Licensed Data solely for internal, non-production research and evaluation purposes."
+    },
+    {
+      "question_id": "Q02",
+      "question": "May HelixLM be deployed to customers through Asteria's hosted service?",
+      "expected_answer": "Yes, through Asteria's hosted service, without distributing model weights.",
+      "document_id": "D02",
+      "clause": "2.1 and 3.1",
+      "page": 1,
+      "status": "Supported with condition",
+      "expected_citation": "Licensor grants Licensee the right to deploy the Model as part of Licensee's hosted commercial services."
+    },
+    {
+      "question_id": "Q03",
+      "question": "When is the VectorGrid usage report due?",
+      "expected_answer": "Within 15 calendar days after each calendar quarter.",
+      "document_id": "D03",
+      "clause": "4.1",
+      "page": 2,
+      "status": "Supported",
+      "expected_citation": "Within fifteen (15) calendar days after each calendar quarter, Customer shall provide a usage report."
+    },
+    {
+      "question_id": "Q04",
+      "question": "How does the Horizon Bank subscription renew?",
+      "expected_answer": "Automatic 12-month renewals unless either party gives 60 days' written notice.",
+      "document_id": "D04",
+      "clause": "5.2",
+      "page": 2,
+      "status": "Supported",
+      "expected_citation": "The Subscription automatically renews for successive twelve-month periods unless either party gives at least sixty (60) days' written notice."
+    },
+    {
+      "question_id": "Q05",
+      "question": "Does the current data room prove that OCRVision API may be used commercially?",
+      "expected_answer": "No conclusion. No executed OCRVision agreement is present.",
+      "document_id": null,
+      "clause": null,
+      "page": null,
+      "status": "Insufficient evidence",
+      "expected_citation": null
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "project": "DataRights DD + Contract Memory",
+    "company": {
+      "company_id": "CO01",
+      "company_name": "Asteria AI SAS",
+      "description": "Startup B2B qui automatise l'analyse contractuelle et la recherche documentaire pour les equipes de due diligence.",
+      "currency": "EUR",
+      "reporting_metric": "Annual recurring revenue (ARR)",
+      "total_arr_eur": 700000
+    },
+    "currency": "EUR",
+    "as_of_date": "2026-09-23",
+    "synthetic_demo_data": true,
+    "purpose": "LexHack 2026 prototype and demonstration"
+  },
+  "financial_summary": {
+    "total_arr_eur": 700000,
+    "before_d05": {
+      "explicit_restriction_arr_eur": 540000,
+      "insufficient_evidence_arr_eur": 160000,
+      "arr_requiring_review_eur": 700000,
+      "share_requiring_review": 1.0,
+      "arr_cleared_eur": 0
+    },
+    "after_d05": {
+      "explicit_restriction_arr_eur": 240000,
+      "insufficient_evidence_arr_eur": 160000,
+      "arr_requiring_review_eur": 400000,
+      "share_requiring_review": 0.5714285714285714,
+      "arr_cleared_eur": 300000
+    },
+    "change": {
+      "explicit_restriction_arr_eur": -300000,
+      "arr_requiring_review_eur": -300000,
+      "share_requiring_review_points": -0.42857142857142855
+    },
+    "interpretation": "Les montants représentent l'ARR associé à un point contractuel à vérifier. Ils ne constituent ni une perte, ni une provision, ni une décote automatique."
+  },
+  "products": [
+    {
+      "product_id": "P01",
+      "product_name": "ClauseLens Enterprise",
+      "arr_eur": 300000,
+      "status_before_d05": "Restriction explicite",
+      "status_after_d05": "Droit commercial documenté sous conditions",
+      "arr_review_before_eur": 300000,
+      "arr_review_after_eur": 0,
+      "change_arr_review_eur": -300000,
+      "reason_after_d05": "D05 autorise Atlas pour ClauseLens à compter du 1er juillet 2026, sous réserve de journalisation, reporting et non-distribution.",
+      "next_action": "Suivre les journaux d'accès et le reporting trimestriel prévus par D05."
+    },
+    {
+      "product_id": "P02",
+      "product_name": "DealRoom Search",
+      "arr_eur": 240000,
+      "status_before_d05": "Restriction explicite",
+      "status_after_d05": "Restriction explicite",
+      "arr_review_before_eur": 240000,
+      "arr_review_after_eur": 240000,
+      "change_arr_review_eur": 0,
+      "reason_after_d05": "D05 exclut expressément DealRoom Search de la permission commerciale.",
+      "next_action": "Obtenir un avenant signé couvrant DealRoom Search ou remplacer Atlas dans ce produit."
+    },
+    {
+      "product_id": "P03",
+      "product_name": "BoardPack Studio",
+      "arr_eur": 160000,
+      "status_before_d05": "Preuve insuffisante",
+      "status_after_d05": "Preuve insuffisante",
+      "arr_review_before_eur": 160000,
+      "arr_review_after_eur": 160000,
+      "change_arr_review_eur": 0,
+      "reason_after_d05": "D07 couvre une autre entité et D08 est un brouillon non signé.",
+      "next_action": "Obtenir des droits exécutés au nom d'Asteria AI SAS pour OCRVision et ReportForge."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "C01",
+      "component_name": "HelixLM 7B",
+      "type": "Modèle de fondation",
+      "document_ids": [
+        "D02"
+      ],
+      "status_after_d05": "Droit commercial documenté",
+      "key_condition": "Déploiement hébergé autorisé; redistribution des poids interdite."
+    },
+    {
+      "component_id": "C02",
+      "component_name": "Atlas Business Corpus",
+      "type": "Jeu de données",
+      "document_ids": [
+        "D01",
+        "D05"
+      ],
+      "status_after_d05": "Droit limité par produit et par date",
+      "key_condition": "ClauseLens autorisé à partir du 1er juillet 2026; DealRoom Search reste exclu; aucune distribution des données."
+    },
+    {
+      "component_id": "C03",
+      "component_name": "VectorGrid Enterprise",
+      "type": "Recherche vectorielle",
+      "document_ids": [
+        "D03"
+      ],
+      "status_after_d05": "Droit commercial documenté",
+      "key_condition": "Usage SaaS autorisé avec plafond mensuel et reporting trimestriel."
+    },
+    {
+      "component_id": "C04",
+      "component_name": "ReportForge Community",
+      "type": "Génération de rapports",
+      "document_ids": [
+        "D08"
+      ],
+      "status_after_d05": "Preuve insuffisante",
+      "key_condition": "D08 est un brouillon non signé et ses conditions ne sont pas effectives."
+    },
+    {
+      "component_id": "C05",
+      "component_name": "OCRVision API",
+      "type": "Reconnaissance de caractères",
+      "document_ids": [
+        "D07"
+      ],
+      "status_after_d05": "Mauvaise entité contractante",
+      "key_condition": "D07 couvre Asteria AI UK Ltd et ne prouve aucun droit pour Asteria AI SAS."
+    }
+  ],
+  "dependencies": [
+    {
+      "product_id": "P01",
+      "component_id": "C01",
+      "use_description": "Generates clause summaries and classifications.",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "HelixLM 7B",
+      "status_after_d05": "Droit commercial documenté",
+      "evidence": "D02"
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C02",
+      "use_description": "Provides examples used in production prompt retrieval and model evaluation.",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "Atlas Business Corpus",
+      "status_after_d05": "Droit limité par produit et par date",
+      "evidence": "D01, D05"
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C03",
+      "use_description": "Stores and searches contract embeddings.",
+      "product_name": "ClauseLens Enterprise",
+      "component_name": "VectorGrid Enterprise",
+      "status_after_d05": "Droit commercial documenté",
+      "evidence": "D03"
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C02",
+      "use_description": "Provides examples used in production retrieval quality tuning.",
+      "product_name": "DealRoom Search",
+      "component_name": "Atlas Business Corpus",
+      "status_after_d05": "Droit limité par produit et par date",
+      "evidence": "D01, D05"
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C03",
+      "use_description": "Runs semantic search across due diligence documents.",
+      "product_name": "DealRoom Search",
+      "component_name": "VectorGrid Enterprise",
+      "status_after_d05": "Droit commercial documenté",
+      "evidence": "D03"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C01",
+      "use_description": "Drafts transaction summaries.",
+      "product_name": "BoardPack Studio",
+      "component_name": "HelixLM 7B",
+      "status_after_d05": "Droit commercial documenté",
+      "evidence": "D02"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C04",
+      "use_description": "Renders customer-facing reports.",
+      "product_name": "BoardPack Studio",
+      "component_name": "ReportForge Community",
+      "status_after_d05": "Preuve insuffisante",
+      "evidence": "D08"
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C05",
+      "use_description": "Extracts text from scanned source documents.",
+      "product_name": "BoardPack Studio",
+      "component_name": "OCRVision API",
+      "status_after_d05": "Mauvaise entité contractante",
+      "evidence": "D07"
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "D01",
+      "file_name": "D01_Atlas_Data_License.pdf",
+      "type": "Licence de données",
+      "entity": "Asteria AI SAS",
+      "counterparty": "DataForge Ltd",
+      "effective_date": "2026-01-01",
+      "parent_document_id": null,
+      "status": "Exécuté",
+      "financial_effect": "Restriction initiale concernant 540 000 EUR d'ARR."
+    },
+    {
+      "document_id": "D02",
+      "file_name": "D02_HelixLM_Model_License.pdf",
+      "type": "Licence de modèle",
+      "entity": "Asteria AI SAS",
+      "counterparty": "Helix Labs GmbH",
+      "effective_date": "2026-02-01",
+      "parent_document_id": null,
+      "status": "Exécuté",
+      "financial_effect": "Droit commercial documenté; aucune exposition financière classée."
+    },
+    {
+      "document_id": "D03",
+      "file_name": "D03_VectorGrid_Enterprise_Agreement.pdf",
+      "type": "Licence logiciel et API",
+      "entity": "Asteria AI SAS",
+      "counterparty": "VectorGrid Inc",
+      "effective_date": "2026-02-15",
+      "parent_document_id": null,
+      "status": "Exécuté",
+      "financial_effect": "Droit commercial documenté avec obligations de reporting."
+    },
+    {
+      "document_id": "D04",
+      "file_name": "D04_Horizon_Bank_Subscription.pdf",
+      "type": "Contrat client SaaS",
+      "entity": "Asteria AI SAS",
+      "counterparty": "Horizon Bank SA",
+      "effective_date": "2026-03-01",
+      "parent_document_id": null,
+      "status": "Exécuté",
+      "financial_effect": "Contrat client relié à ClauseLens; obligations de sécurité précisées par D06."
+    },
+    {
+      "document_id": "D05",
+      "file_name": "D05_Atlas_Amendment_No1.pdf",
+      "type": "Avenant",
+      "entity": "Asteria AI SAS",
+      "counterparty": "DataForge Ltd",
+      "effective_date": "2026-07-01",
+      "parent_document_id": "D01",
+      "status": "Exécuté pour la démonstration",
+      "financial_effect": "Réduit l'ARR sous restriction explicite de 540 000 EUR à 240 000 EUR."
+    },
+    {
+      "document_id": "D06",
+      "file_name": "D06_Horizon_Security_Addendum.pdf",
+      "type": "Addendum de sécurité",
+      "entity": "Asteria AI SAS",
+      "counterparty": "Horizon Bank SA",
+      "effective_date": "2026-03-01",
+      "parent_document_id": "D04",
+      "status": "Exécuté pour la démonstration",
+      "financial_effect": "Ajoute une obligation conditionnelle de notification sous 24 heures; aucun montant assimilé à une perte."
+    },
+    {
+      "document_id": "D07",
+      "file_name": "D07_OCRVision_UK_Agreement.pdf",
+      "type": "Contrat API",
+      "entity": "Asteria AI UK Ltd",
+      "counterparty": "VisionCore Inc",
+      "effective_date": "2026-04-01",
+      "parent_document_id": null,
+      "status": "Exécuté par une autre entité",
+      "financial_effect": "Ne sécurise pas les droits d'Asteria AI SAS; contribue au contrôle de 160 000 EUR d'ARR de BoardPack."
+    },
+    {
+      "document_id": "D08",
+      "file_name": "D08_ReportForge_Order_Form_Draft.pdf",
+      "type": "Projet de bon de commande",
+      "entity": "Asteria AI SAS",
+      "counterparty": "ReportForge Systems",
+      "effective_date": null,
+      "parent_document_id": null,
+      "status": "Brouillon non signé",
+      "financial_effect": "Ne sécurise aucun droit; contribue au contrôle de 160 000 EUR d'ARR de BoardPack."
+    }
+  ],
+  "remediation": [
+    {
+      "action_id": "R01",
+      "priority": 1,
+      "issue": "Atlas non autorisé dans DealRoom Search",
+      "arr_concerned_eur": 240000,
+      "owner": "Finance + Juridique + Produit",
+      "action": "Négocier un avenant commercial ou retirer Atlas de DealRoom Search.",
+      "evidence_to_close": "Avenant signé couvrant P02 ou preuve de remplacement technique.",
+      "target_date": "Avant soumission finale",
+      "status": "Ouvert"
+    },
+    {
+      "action_id": "R02",
+      "priority": 2,
+      "issue": "ReportForge non exécuté",
+      "arr_concerned_eur": 160000,
+      "owner": "Achats + Juridique",
+      "action": "Signer un contrat commercial au nom d'Asteria AI SAS.",
+      "evidence_to_close": "Bon de commande et conditions signés.",
+      "target_date": "Avant mise en production",
+      "status": "Ouvert"
+    },
+    {
+      "action_id": "R03",
+      "priority": 2,
+      "issue": "OCRVision contracté par la mauvaise entité",
+      "arr_concerned_eur": 160000,
+      "owner": "Juridique",
+      "action": "Obtenir un avenant d'affiliation, une novation ou un contrat SAS.",
+      "evidence_to_close": "Document signé donnant explicitement les droits à Asteria AI SAS.",
+      "target_date": "Avant mise en production",
+      "status": "Ouvert"
+    },
+    {
+      "action_id": "R04",
+      "priority": 3,
+      "issue": "Conditions opérationnelles de D05",
+      "arr_concerned_eur": 300000,
+      "owner": "Produit + Conformité",
+      "action": "Conserver les journaux d'accès et produire le reporting trimestriel.",
+      "evidence_to_close": "Journal d'accès et rapport trimestriel daté.",
+      "target_date": "Chaque trimestre",
+      "status": "À suivre"
+    },
+    {
+      "action_id": "R05",
+      "priority": 3,
+      "issue": "Test de sécurité Horizon",
+      "arr_concerned_eur": 300000,
+      "owner": "Sécurité",
+      "action": "Réaliser le test annuel et transmettre le résumé exécutif.",
+      "evidence_to_close": "Rapport de test et preuve de transmission; l'acceptation du client reste distincte.",
+      "target_date": "Annuel",
+      "status": "À suivre"
+    }
+  ],
+  "tests": [
+    {
+      "id": "Q01",
+      "category": "Direct",
+      "question": "Can Asteria use the Atlas Business Corpus in a commercial product?",
+      "expected": "Not under D01 alone. D01 limits use to internal non-production research and evaluation and prohibits commercial use.",
+      "source": "D01",
+      "clause": "2.1 and 3.1(a)",
+      "page": 1,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q02",
+      "category": "Direct",
+      "question": "May HelixLM be deployed to customers through Asteria's hosted service?",
+      "expected": "Yes, if customers access it through Asteria's hosted service and do not receive the model weights.",
+      "source": "D02",
+      "clause": "2.1 and 3.1",
+      "page": 1,
+      "status": "supported_with_condition",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q03",
+      "category": "Direct",
+      "question": "When is the VectorGrid usage report due?",
+      "expected": "Within 15 calendar days after each calendar quarter.",
+      "source": "D03",
+      "clause": "4.1",
+      "page": 2,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q04",
+      "category": "Direct",
+      "question": "How does the Horizon Bank subscription renew?",
+      "expected": "It renews for successive 12-month periods unless either party gives at least 60 days' written notice.",
+      "source": "D04",
+      "clause": "5.2",
+      "page": 2,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q05",
+      "category": "Direct",
+      "question": "Which product receives a commercial-use permission under the Atlas amendment?",
+      "expected": "ClauseLens Enterprise only. The amendment does not authorise Atlas use in DealRoom Search or other products.",
+      "source": "D05",
+      "clause": "2.1 and 2.2",
+      "page": 1,
+      "status": "supported_with_condition",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q06",
+      "category": "Direct",
+      "question": "When must Asteria notify Horizon Bank of a security incident?",
+      "expected": "Within 24 hours after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+      "source": "D06",
+      "clause": "3.1",
+      "page": 1,
+      "status": "supported_with_condition",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q07",
+      "category": "Direct",
+      "question": "Which legal entity is licensed to use OCRVision API?",
+      "expected": "Asteria AI UK Ltd. The agreement does not grant rights to affiliates unless VisionCore consents in writing.",
+      "source": "D07",
+      "clause": "1.2 and 2.1",
+      "page": 1,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q08",
+      "category": "Direct",
+      "question": "Is the ReportForge order form currently effective?",
+      "expected": "No. It is an unsigned draft and states that it has no effect until signed by both parties.",
+      "source": "D08",
+      "clause": "1.1 and 6.1",
+      "page": 1,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q09",
+      "category": "Reformulation",
+      "question": "Can Asteria hand HelixLM's model weights to a customer?",
+      "expected": "No. Customers may access functionality through the hosted service, but the weights may not be distributed.",
+      "source": "D02",
+      "clause": "3.1 and 3.2",
+      "page": 1,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q10",
+      "category": "Reformulation",
+      "question": "May raw Atlas records be exposed to ClauseLens customers after the amendment?",
+      "expected": "No. D05 permits limited use in ClauseLens but prohibits exposing or distributing the underlying data to customers.",
+      "source": "D05",
+      "clause": "2.3",
+      "page": 1,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q11",
+      "category": "Reformulation",
+      "question": "What recurring evidence must Asteria give VectorGrid?",
+      "expected": "A quarterly usage report showing documents processed and active production workspaces.",
+      "source": "D03",
+      "clause": "4.1",
+      "page": 2,
+      "status": "supported",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    },
+    {
+      "id": "Q12",
+      "category": "Reformulation",
+      "question": "Does every service outage trigger Horizon Bank's 24-hour incident notice?",
+      "expected": "No. The 24-hour notice applies only after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+      "source": "D06",
+      "clause": "2.1 and 3.1",
+      "page": 1,
+      "status": "supported_with_condition",
+      "visibility": "Développeuse",
+      "acceptance_rule": "Conclusion, conditions et citation correctes"
+    }
+  ],
+  "demo_script": [
+    {
+      "time": "0:00–0:20",
+      "speaker": "Financier",
+      "screen": "Synthèse",
+      "message": "Asteria génère 700 000 EUR d'ARR. Avant lecture des avenants, la totalité nécessite une vérification contractuelle."
+    },
+    {
+      "time": "0:20–0:55",
+      "speaker": "Développeuse",
+      "screen": "Contract Memory",
+      "message": "Recherche Atlas et affiche D01, D05, la date d'effet et les produits concernés."
+    },
+    {
+      "time": "0:55–1:25",
+      "speaker": "Financier",
+      "screen": "Comparaison avant/après",
+      "message": "D05 sécurise 300 000 EUR d'ARR de ClauseLens, mais laisse 240 000 EUR sous restriction et 160 000 EUR avec preuve insuffisante."
+    },
+    {
+      "time": "1:25–2:05",
+      "speaker": "Développeuse",
+      "screen": "Questions complexes",
+      "message": "Teste la date, la mauvaise entité D07 et le brouillon D08; l'IA cite ou s'abstient."
+    },
+    {
+      "time": "2:05–2:40",
+      "speaker": "Financier",
+      "screen": "Remédiation",
+      "message": "Priorise R01, R02 et R03 selon l'ARR concerné et la preuve nécessaire pour clôturer."
+    },
+    {
+      "time": "2:40–3:00",
+      "speaker": "Financier",
+      "screen": "Conclusion",
+      "message": "Contract Memory transforme les contrats en décisions vérifiables, datées et reliées aux revenus."
+    }
+  ],
+  "decision_rules": [
+    "Compter chaque produit une seule fois dans la catégorie la plus prioritaire.",
+    "Ordre de priorité: restriction explicite, preuve insuffisante, droit commercial documenté.",
+    "Appliquer une autorisation uniquement au produit, à l'entité et à la période couverts.",
+    "Écarter les brouillons non signés comme preuve de droits effectifs.",
+    "Répondre information insuffisante lorsque la preuve manque.",
+    "Ne jamais présenter l'ARR concerné comme une perte certaine ou une valorisation."
+  ]
+}

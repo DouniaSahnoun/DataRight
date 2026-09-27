@@ -1,0 +1,28 @@
+{
+  "relationships": [
+    {
+      "child": "D05",
+      "parent": "D01",
+      "relationship": "amends",
+      "scope": "ClauseLens Enterprise only"
+    },
+    {
+      "child": "D06",
+      "parent": "D04",
+      "relationship": "supplements",
+      "scope": "Security incidents and testing"
+    },
+    {
+      "child": "D07",
+      "parent": null,
+      "relationship": "wrong_entity_for_target",
+      "scope": "Asteria AI UK Ltd only"
+    },
+    {
+      "child": "D08",
+      "parent": null,
+      "relationship": "unsigned_draft",
+      "scope": "No effective licence"
+    }
+  ]
+}

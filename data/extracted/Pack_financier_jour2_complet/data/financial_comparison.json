@@ -1,0 +1,18 @@
+{
+  "before_D05": {
+    "explicit_restriction_arr_eur": 540000,
+    "missing_rights_arr_eur": 160000,
+    "arr_requiring_review_eur": 700000
+  },
+  "after_D05_effective": {
+    "explicit_restriction_arr_eur": 240000,
+    "missing_rights_arr_eur": 160000,
+    "arr_requiring_review_eur": 400000
+  },
+  "change": {
+    "explicit_restriction_arr_eur": -300000,
+    "arr_requiring_review_eur": -300000
+  },
+  "explanation": "D05 permits Atlas use in ClauseLens Enterprise only. DealRoom Search remains restricted. D07 does not cover Asteria AI SAS and D08 is unsigned, so BoardPack Studio remains in the missing-rights category.",
+  "limitation": "These are revenues associated with review items, not loss or valuation estimates."
+}

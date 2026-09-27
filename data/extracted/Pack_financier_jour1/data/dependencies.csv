@@ -1,0 +1,9 @@
+﻿product_id,component_id,use_description
+P01,C01,Generates clause summaries and classifications.
+P01,C02,Provides examples used in production prompt retrieval and model evaluation.
+P01,C03,Stores and searches contract embeddings.
+P02,C02,Provides examples used in production retrieval quality tuning.
+P02,C03,Runs semantic search across due diligence documents.
+P03,C01,Drafts transaction summaries.
+P03,C04,Renders customer-facing reports.
+P03,C05,Extracts text from scanned source documents.

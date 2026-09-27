@@ -1,0 +1,4 @@
+﻿product_id,product_name,description,arr_eur,review_status,status_reason
+P01,ClauseLens Enterprise,"Extraction de clauses, classification et alertes de risque pour les contrats.",300000,Explicit restriction,Uses Atlas Business Corpus under a research-only licence.
+P02,DealRoom Search,Recherche semantique dans les data rooms et dossiers de due diligence.,240000,Explicit restriction,Uses Atlas Business Corpus under a research-only licence.
+P03,BoardPack Studio,Generation de syntheses et rapports de transaction.,160000,Missing rights document,No executed licence is present for ReportForge or OCRVision API.

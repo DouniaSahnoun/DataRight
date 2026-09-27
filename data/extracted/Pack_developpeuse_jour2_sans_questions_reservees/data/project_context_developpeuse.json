@@ -1,0 +1,332 @@
+{
+  "company": {
+    "company_id": "CO01",
+    "company_name": "Asteria AI SAS",
+    "description": "Startup B2B qui automatise l'analyse contractuelle et la recherche documentaire pour les equipes de due diligence.",
+    "currency": "EUR",
+    "reporting_metric": "Annual recurring revenue (ARR)",
+    "total_arr_eur": 700000
+  },
+  "products": [
+    {
+      "product_id": "P01",
+      "product_name": "ClauseLens Enterprise",
+      "description": "Extraction de clauses, classification et alertes de risque pour les contrats.",
+      "arr_eur": 300000,
+      "review_status": "Explicit restriction",
+      "status_reason": "Uses Atlas Business Corpus under a research-only licence."
+    },
+    {
+      "product_id": "P02",
+      "product_name": "DealRoom Search",
+      "description": "Recherche semantique dans les data rooms et dossiers de due diligence.",
+      "arr_eur": 240000,
+      "review_status": "Explicit restriction",
+      "status_reason": "Uses Atlas Business Corpus under a research-only licence."
+    },
+    {
+      "product_id": "P03",
+      "product_name": "BoardPack Studio",
+      "description": "Generation de syntheses et rapports de transaction.",
+      "arr_eur": 160000,
+      "review_status": "Missing rights document",
+      "status_reason": "No executed licence is present for ReportForge or OCRVision API."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "C01",
+      "component_name": "HelixLM 7B",
+      "component_type": "Foundation model",
+      "document_id": "D02",
+      "rights_status": "Documented commercial right",
+      "summary": "Commercial deployment in Asteria-hosted services is permitted; model weights may not be redistributed."
+    },
+    {
+      "component_id": "C02",
+      "component_name": "Atlas Business Corpus",
+      "component_type": "Training and evaluation dataset",
+      "document_id": "D01",
+      "rights_status": "Explicit restriction",
+      "summary": "Use is limited to internal non-production research and evaluation; commercial products and production training are prohibited."
+    },
+    {
+      "component_id": "C03",
+      "component_name": "VectorGrid Enterprise",
+      "component_type": "Embedding and vector search service",
+      "document_id": "D03",
+      "rights_status": "Documented commercial right",
+      "summary": "Commercial SaaS use is permitted, subject to a monthly processing cap and quarterly reporting."
+    },
+    {
+      "component_id": "C04",
+      "component_name": "ReportForge Community",
+      "component_type": "Report generation library",
+      "document_id": "",
+      "rights_status": "Missing rights document",
+      "summary": "No licence document has been provided in the current data room."
+    },
+    {
+      "component_id": "C05",
+      "component_name": "OCRVision API",
+      "component_type": "Optical character recognition API",
+      "document_id": "",
+      "rights_status": "Missing rights document",
+      "summary": "No executed commercial agreement has been provided in the current data room."
+    }
+  ],
+  "dependencies": [
+    {
+      "product_id": "P01",
+      "component_id": "C01",
+      "use_description": "Generates clause summaries and classifications."
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C02",
+      "use_description": "Provides examples used in production prompt retrieval and model evaluation."
+    },
+    {
+      "product_id": "P01",
+      "component_id": "C03",
+      "use_description": "Stores and searches contract embeddings."
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C02",
+      "use_description": "Provides examples used in production retrieval quality tuning."
+    },
+    {
+      "product_id": "P02",
+      "component_id": "C03",
+      "use_description": "Runs semantic search across due diligence documents."
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C01",
+      "use_description": "Drafts transaction summaries."
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C04",
+      "use_description": "Renders customer-facing reports."
+    },
+    {
+      "product_id": "P03",
+      "component_id": "C05",
+      "use_description": "Extracts text from scanned source documents."
+    }
+  ],
+  "day1_documents": [
+    {
+      "document_id": "D01",
+      "file_name": "D01_Atlas_Data_License.pdf",
+      "document_type": "Dataset licence",
+      "counterparty": "DataForge Ltd",
+      "effective_date": "2026-01-01",
+      "related_components": "C02"
+    },
+    {
+      "document_id": "D02",
+      "file_name": "D02_HelixLM_Model_License.pdf",
+      "document_type": "Model licence",
+      "counterparty": "Helix Labs GmbH",
+      "effective_date": "2026-02-01",
+      "related_components": "C01"
+    },
+    {
+      "document_id": "D03",
+      "file_name": "D03_VectorGrid_Enterprise_Agreement.pdf",
+      "document_type": "Software and API licence",
+      "counterparty": "VectorGrid Inc",
+      "effective_date": "2026-02-15",
+      "related_components": "C03"
+    },
+    {
+      "document_id": "D04",
+      "file_name": "D04_Horizon_Bank_Subscription.pdf",
+      "document_type": "Customer SaaS subscription",
+      "counterparty": "Horizon Bank SA",
+      "effective_date": "2026-03-01",
+      "related_components": "P01"
+    }
+  ],
+  "day2_documents": [
+    {
+      "document_id": "D05",
+      "file": "contracts/D05_Atlas_Amendment_No1.pdf",
+      "type": "Amendment",
+      "parent_document_id": "D01",
+      "effective_date": "2026-07-01",
+      "entity": "Asteria AI SAS",
+      "status": "executed_demo"
+    },
+    {
+      "document_id": "D06",
+      "file": "contracts/D06_Horizon_Security_Addendum.pdf",
+      "type": "Security addendum",
+      "parent_document_id": "D04",
+      "effective_date": "2026-03-01",
+      "entity": "Asteria AI SAS",
+      "status": "executed_demo"
+    },
+    {
+      "document_id": "D07",
+      "file": "contracts/D07_OCRVision_UK_Agreement.pdf",
+      "type": "API agreement",
+      "parent_document_id": null,
+      "effective_date": "2026-04-01",
+      "entity": "Asteria AI UK Ltd",
+      "status": "executed_demo_wrong_entity_for_target"
+    },
+    {
+      "document_id": "D08",
+      "file": "contracts/D08_ReportForge_Order_Form_Draft.pdf",
+      "type": "Draft order form",
+      "parent_document_id": null,
+      "effective_date": null,
+      "entity": "Asteria AI SAS",
+      "status": "unsigned_draft"
+    }
+  ],
+  "financial_comparison": {
+    "before_D05": {
+      "explicit_restriction_arr_eur": 540000,
+      "missing_rights_arr_eur": 160000,
+      "arr_requiring_review_eur": 700000
+    },
+    "after_D05_effective": {
+      "explicit_restriction_arr_eur": 240000,
+      "missing_rights_arr_eur": 160000,
+      "arr_requiring_review_eur": 400000
+    },
+    "change": {
+      "explicit_restriction_arr_eur": -300000,
+      "arr_requiring_review_eur": -300000
+    },
+    "explanation": "D05 permits Atlas use in ClauseLens Enterprise only. DealRoom Search remains restricted. D07 does not cover Asteria AI SAS and D08 is unsigned, so BoardPack Studio remains in the missing-rights category.",
+    "limitation": "These are revenues associated with review items, not loss or valuation estimates."
+  },
+  "shared_questions": [
+    {
+      "id": "Q01",
+      "category": "Direct",
+      "question": "Can Asteria use the Atlas Business Corpus in a commercial product?",
+      "expected": "Not under D01 alone. D01 limits use to internal non-production research and evaluation and prohibits commercial use.",
+      "source": "D01",
+      "clause": "2.1 and 3.1(a)",
+      "page": 1,
+      "status": "supported"
+    },
+    {
+      "id": "Q02",
+      "category": "Direct",
+      "question": "May HelixLM be deployed to customers through Asteria's hosted service?",
+      "expected": "Yes, if customers access it through Asteria's hosted service and do not receive the model weights.",
+      "source": "D02",
+      "clause": "2.1 and 3.1",
+      "page": 1,
+      "status": "supported_with_condition"
+    },
+    {
+      "id": "Q03",
+      "category": "Direct",
+      "question": "When is the VectorGrid usage report due?",
+      "expected": "Within 15 calendar days after each calendar quarter.",
+      "source": "D03",
+      "clause": "4.1",
+      "page": 2,
+      "status": "supported"
+    },
+    {
+      "id": "Q04",
+      "category": "Direct",
+      "question": "How does the Horizon Bank subscription renew?",
+      "expected": "It renews for successive 12-month periods unless either party gives at least 60 days' written notice.",
+      "source": "D04",
+      "clause": "5.2",
+      "page": 2,
+      "status": "supported"
+    },
+    {
+      "id": "Q05",
+      "category": "Direct",
+      "question": "Which product receives a commercial-use permission under the Atlas amendment?",
+      "expected": "ClauseLens Enterprise only. The amendment does not authorise Atlas use in DealRoom Search or other products.",
+      "source": "D05",
+      "clause": "2.1 and 2.2",
+      "page": 1,
+      "status": "supported_with_condition"
+    },
+    {
+      "id": "Q06",
+      "category": "Direct",
+      "question": "When must Asteria notify Horizon Bank of a security incident?",
+      "expected": "Within 24 hours after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+      "source": "D06",
+      "clause": "3.1",
+      "page": 1,
+      "status": "supported_with_condition"
+    },
+    {
+      "id": "Q07",
+      "category": "Direct",
+      "question": "Which legal entity is licensed to use OCRVision API?",
+      "expected": "Asteria AI UK Ltd. The agreement does not grant rights to affiliates unless VisionCore consents in writing.",
+      "source": "D07",
+      "clause": "1.2 and 2.1",
+      "page": 1,
+      "status": "supported"
+    },
+    {
+      "id": "Q08",
+      "category": "Direct",
+      "question": "Is the ReportForge order form currently effective?",
+      "expected": "No. It is an unsigned draft and states that it has no effect until signed by both parties.",
+      "source": "D08",
+      "clause": "1.1 and 6.1",
+      "page": 1,
+      "status": "supported"
+    },
+    {
+      "id": "Q09",
+      "category": "Reformulation",
+      "question": "Can Asteria hand HelixLM's model weights to a customer?",
+      "expected": "No. Customers may access functionality through the hosted service, but the weights may not be distributed.",
+      "source": "D02",
+      "clause": "3.1 and 3.2",
+      "page": 1,
+      "status": "supported"
+    },
+    {
+      "id": "Q10",
+      "category": "Reformulation",
+      "question": "May raw Atlas records be exposed to ClauseLens customers after the amendment?",
+      "expected": "No. D05 permits limited use in ClauseLens but prohibits exposing or distributing the underlying data to customers.",
+      "source": "D05",
+      "clause": "2.3",
+      "page": 1,
+      "status": "supported"
+    },
+    {
+      "id": "Q11",
+      "category": "Reformulation",
+      "question": "What recurring evidence must Asteria give VectorGrid?",
+      "expected": "A quarterly usage report showing documents processed and active production workspaces.",
+      "source": "D03",
+      "clause": "4.1",
+      "page": 2,
+      "status": "supported"
+    },
+    {
+      "id": "Q12",
+      "category": "Reformulation",
+      "question": "Does every service outage trigger Horizon Bank's 24-hour incident notice?",
+      "expected": "No. The 24-hour notice applies only after confirmation that a Security Incident affects Horizon Bank Customer Data.",
+      "source": "D06",
+      "clause": "2.1 and 3.1",
+      "page": 1,
+      "status": "supported_with_condition"
+    }
+  ]
+}

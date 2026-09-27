@@ -1,0 +1,5 @@
+﻿document_id,file_name,document_type,counterparty,effective_date,related_components
+D01,D01_Atlas_Data_License.pdf,Dataset licence,DataForge Ltd,2026-01-01,C02
+D02,D02_HelixLM_Model_License.pdf,Model licence,Helix Labs GmbH,2026-02-01,C01
+D03,D03_VectorGrid_Enterprise_Agreement.pdf,Software and API licence,VectorGrid Inc,2026-02-15,C03
+D04,D04_Horizon_Bank_Subscription.pdf,Customer SaaS subscription,Horizon Bank SA,2026-03-01,P01
